@@ -1,0 +1,462 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Lunar Calendar</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">   
+	<title>Lunar Calendar</title>
+	
+		
+	<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>	
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 	
+	
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>	
+	
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/system.js"></script>
+	<script type="text/javascript" src="js/service.js"></script>
+	
+	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+	<link href="index.css" rel="stylesheet">	
+	
+	<style>
+		
+		.ui-content {
+			background: url("images/image.jpg");
+			background-repeat: repeat;
+			 -webkit-background-size: cover; /*for webKit*/
+			-moz-background-size: cover; /*Mozilla*/
+			-o-background-size: cover; /*opera*/
+			background-size: cover; /*generic*/
+		}
+		
+		.ui-header {
+			background: #0A5181;;
+			
+		}
+				
+	</style>
+	
+</head>
+<body>
+    <div data-role="page" id="firstPage" data-theme="c">	
+        <div data-role="header">
+						
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+			
+			<h1 class="title_app">Lunar calendar</h1>
+			
+        </div>
+					
+		<div data-role="content" data-theme="b">	
+						
+			<a href="#moon-zodiac" id="moon-zodiac" data-theme="c" data-role="button" data-icon="arrow-r"><span id="current-data"></span>  <span id="moon_in">Луна в:</span> <span id="moon-zodiac-data"></span></a>
+			<a href="#moon-first-part" id="moon-first-part" data-role="button" data-theme="c" data-icon="arrow-r"><span style="color: #A727C7;" id="moon-first-part-data">Първа четвърт</span></a>
+			<a href="#moon_without_course" id="moon_without_course" data-theme="c" data-role="button" data-icon="arrow-r"><span style="color: rgb(211, 19, 88);" id="moon_without_course-data">Луна без курс</span></a><br/>				
+			<a href="#curr-activities-page" id="curr-activities-page" data-role="button" data-theme="c" data-icon="arrow-r"><span id="curr-activities-id">Деня е благоприятен за:</span></a>		<br/>
+						
+        </div>
+		
+		
+		<div data-role="footer">	
+			<h3 id="appText">Лунен календар за вашето ежедневие!</h3> 
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#facebook-page"  id="face-book">FaceBook</a></li>
+					<li><a href="#about-page" id="about"><span id="about-id">About</span></a></li>
+					<li><a href="#contact-page"  id="contact"><span id="contact-id">Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+		
+    </div>
+	
+	
+
+	<div data-role="page" id="moon-first-part"  data-add-back-btn="true" data-theme="c">
+        
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<h3>moon first part must be implemented</h3>
+		</div>
+											
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	
+	
+	<div data-role="page" id="moon_without_course"  data-add-back-btn="true" data-theme="c">
+       
+	   <div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<h3>moon without course must be implemented</h3>
+		</div>
+		
+					   
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	
+	<div data-role="page" id="menu-main-category"  data-add-back-btn="true" data-theme="c">
+       
+	    <div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+			
+		<div data-role="content" data-theme="b">
+            <a href="#menu-diet" id="menu-diet" data-role="button" data-icon="arrow-r">Диети</a><br/>
+			<a href="#menu-massage" id="menu-massage" data-role="button" data-icon="arrow-r">Масажи</a><br/>
+			<a href="#menu-skin" id="menu-skin" data-role="button" data-icon="arrow-r">Грижа за кожата</a><br/>
+			<a href="#menu4" id="menu4" data-role="button" data-icon="arrow-r">Грижа за косата</a><br/>
+			<a href="#menu5" id="menu5" data-role="button" data-icon="arrow-r">Грижа за ноктите</a><br/>
+			<a href="#menu6" id="menu6" data-role="button" data-icon="arrow-r">Грижа за цветята</a><br/>
+			<a href="#menu7" id="menu7" data-role="button" data-icon="arrow-r">Поддържане на дома</a><br/>
+			<a href="#menu8" id="menu8" data-role="button" data-icon="arrow-r">Пазаруване</a><br/>
+			<a href="#menu9" id="menu9" data-role="button" data-icon="arrow-r">Работа в градината</a><br/>
+					
+        </div>
+		   
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+   	
+	<div data-role="page" id="menu-diet"  data-add-back-btn="true" data-theme="c">
+       <div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="d" id="add-moon-diet"></div>
+		</div>
+		
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	
+	<div data-role="page" id="menu-massage"  data-add-back-btn="true" data-theme="c">
+        <div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="d" id="add-moon-massage"></div>
+		</div>
+				
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	
+	<div data-role="page" id="menu-skin"  data-add-back-btn="true" data-theme="c">
+        
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="d" id="add-moon-skin"></div>
+		</div>
+		
+		        
+		<div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+			
+        </div>
+    </div>
+	
+	
+	<!-- this is moon phase section -->
+	<div data-role="page" id="menu-moon-phase"  data-add-back-btn="true" data-theme="c">
+        
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<p>Детайлна информация за всички лунни фази!</p>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="datepicker"></label>
+				<input type="text" id="datepicker" disabled placeholder="Календар с лунни фази"/></p>			
+			</div>
+		</div>
+			
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	
+	
+	
+	<!-- facebook -->
+	<div data-role="page" id="facebook-page"  data-add-back-btn="true" data-theme="c">
+        
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+			<p>click to Facebook</p>
+		</div>
+						
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	<!-- about -->
+	<div data-role="page" id="about-page"  data-add-back-btn="true" data-theme="c">
+        
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		
+		<div data-role="content" data-theme="b">
+			<p>Astro horoscope - astrology, numerology, horoskop, horoskopi, xoroskop, tarot</p>
+		</div>
+				
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+
+	<!-- contact -->
+	<div data-role="page" id="contact-page"   data-add-back-btn="true" data-theme="c">
+        
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+				
+		<div data-role="content" data-theme="b">
+			<p>
+				Copyright © 2003-2013 <br/>
+				Кирил Стойчев, <br/>
+				e-mail: kiril_astro(аt)abv.bg <br/>
+				<h3><a href="http://bgjoin.com">Development by bg join</a></h3>
+			</p>
+		</div>		
+		
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+	
+	<!-- languages -->
+	<div data-role="page" id="lng-page"  data-add-back-btn="true" data-theme="c">
+        
+		
+		<div data-role="header">
+			<a href="#popupMenu" class="ui-btn-right" data-rel="popup" data-role="button" data-inline="true" 
+				data-transition="slidedown" data-icon="gear" data-theme="a">
+				<span class="setting-text">Options</span>
+			</a>
+			
+			<div data-role="popup" id="popupMenu" data-theme="d">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+					<li data-role="divider" data-theme="e">Изберете</li>
+					<li><a href="#menu-main-category" id="menu-main-category" ><span id="category-id">Категории</span></a></li>
+					<li><a href="#menu-moon-phase" id="menu-moon-phase" ><span id="moon_phase">Фази на луната</span></a></li>				
+					<li><a href="#lng-page"><span id="moon_lng">Език</span></a></li>
+				</ul>
+			</div>
+			
+             <h1 class="title_app">Lunar calendar</h1>
+        </div>
+		
+		<div data-role="content" data-theme="b">
+							
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Изберете език:</legend>
+				<input type="radio" name="radio-choice" id="en-lng" value="" />
+				<label for="en-lng">English</label>
+
+				<input type="radio" name="radio-choice" id="bg-lng" value=""  />
+				<label for="bg-lng">Bulgarian</label>
+					
+			</fieldset>
+				
+		</div>			
+		
+        <div data-role="footer" data-theme="a">
+            <h1>Lunar Calendar</h1>
+        </div>
+    </div>
+	
+
+</body>	
+</html>
